@@ -1,1 +1,1 @@
-# Weather-app
+Weather app using CSS,HTML andJAVASCRIPT
