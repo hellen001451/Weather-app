@@ -14,12 +14,35 @@ html{
 }
 body{
     min-height: 100%;
+    color: aliceblue;
 }
 body{
-    background-image: url("./images/background.webp");
+    background-image: url("./images/landscape-background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     
+}
+.top{
+    margin-right: 150px;
+    
+}
+
+.top > h1{
+    font-size: 50px;
+    font-weight: 500;
+
+}
+.top > h1{
+    font-size: 40px;
+    font-weight: 500;
+
+}
+.top > img{
+    width: 150px;
+    margin-bottom: 15px;
+}
+.weather{
+    display: flex;
 }
 .centre{
     width: 50%;
@@ -28,16 +51,18 @@ body{
     margin:100px auto 0;
     padding:30px;
     border-radius: 10px;
-    background: url("./images/landscape-background.jpg");
-    align-items: center;
+    background: url("./images/daytime-background.jpg");
+    
+   
    
    
 }
 .search{
     display: flex;
     text-align: right;
-    justify-content: space-between;
     align-items: center;
+    margin-bottom:80px;
+    justify-content: center;
 
 }
 .search input{
@@ -63,17 +88,21 @@ body{
 }
 .details{
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 20px;
+    flex-direction: column;
+    justify-content: center;
 
 }
 .col{
     display: flex;
     align-items: center;
-    margin-right: 4rem;
+    gap:1rem;
 }
 .col img{
     align-items: center;
-    width:4rem ;
+    width:2rem ;
+    height:2rem;
+    margin-bottom: 10px;
+}
+.col p{
+    font-size: 14px;
 }
