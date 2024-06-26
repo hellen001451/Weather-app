@@ -72,10 +72,15 @@ h4{
     background: url("./images/day-time.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    
-   
-   
-   
+
+}
+.centre.daytime {
+    background: url("./images/day-time.jpg");
+}
+
+.centre.nighttime {
+    background: url("./images/night-background.jpg");
+    color: #fff; 
 }
 .search{
     display: flex;
@@ -139,17 +144,94 @@ h4{
     padding: 20px;
 }
 .day img{
-    width: 3rem;
-    margin-block: 10px 10px;
-}
-/* styles.css */
-body.daytime {
-    background-color: #f0f8ff; /* Light blue or any bright color */
-    color: #000; /* Dark text for contrast */
+    width: 4rem;
+    margin-block: 10px;
 }
 
-body.nighttime {
-    background-color: #2c3e50; /* Dark blue or any dark color */
-    color: #fff; /* Light text for contrast */
-}
+@media screen and (max-width:768px){
+    h4{
+        font-size: 5px;
+        font-weight: 100;
+    }
+    .degree > h1{
+        font-size: 13px;
+        font-weight: 300;
+    
+    }
+    .degree > h2{
+        font-size: 10px;
+        font-weight: 300;
+    
+    }
+    .degree > p{
+        font-size: 6px;
+    }
+    .days{
+        margin-top: 30px;
+        border-radius: 10px;
+        gap: 1rem;
+        padding: 5px;
+    }
+    .top > p{
+        font-size: 6px;
+    }
+    .col{
+        gap:5px;
+    }
+    .col img{
+        width:10px ;
+        height:10px;
+        margin-bottom: 10px;
+    }
+    .details > p{
+        font-size:8px ;
+    }
+    .col p{
+        font-size: 8px;
+    }
+    .top{
+        margin-right: 10px;
+    }
+    .search{
+        margin-bottom:30px;
+        
+    
+    }
+    .day img{
+        width: 30px;
+        margin-block:2px;
+    }
+    .degree{
+        display: flex;
+        flex-direction: column;
+        margin-right: 10px;
+    }
+    .search input{
+        padding: 5px 10px;
+        border-radius: 10px;
+        font-size: 8px;
+        width:4cm;
+    }
+    .search button{
+        padding: 5px;
+        border-radius: 10px;
+        margin-left:-2.2rem;
+        font-size: 8px; 
+    
+    }
+    .mobile{
+        display: flex;
+        flex-direction: column;
+        margin-inline: 20px;
+    }
+    .mobile >p{
+        font-size: 8px;
 
+    }
+    .mobile > img{
+        width: 50px;
+        margin-bottom: 0px;
+    }
+    
+    
+}

@@ -2,6 +2,7 @@ const apiKey = "a97c5ae048f4155d874a7af8bb6486ef";
 const apiUrl ="https://api.openweathermap.org/data/2.5/forecast?units=metric&q=";
 const searchInput = document.querySelector(".search input");
 const searchBtn = document.querySelector(".search button");
+const centreDiv = document.querySelector(".centre");
         
 const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -60,15 +61,27 @@ async function checkWeather(city){
 
      document.getElementById("date").innerHTML = days[day] + ', ' + date + ' ' + months[month];
 
+        // Change background based on time
+        // checks if the current hour (hour) is between 6 AM (hour >= 6) and 6 PM (hour < 18)
+        if (hour >= 6 && hour < 18) {
+            centreDiv.classList.add('daytime');
+            centreDiv.classList.remove('nighttime');
+        } else {
+            centreDiv.classList.add('nighttime');
+            centreDiv.classList.remove('daytime');
+        }
     }, 1000);
 
     searchInput.value = "";
 }
 
-
 searchBtn.addEventListener("click", ()=>{
      checkWeather(searchInput.value);
      })
+
+window.onload = () => {
+     checkWeather("Nairobi");
+    }
        
         // u can also use the following to get temp, weatherCondition and set weathericons if the for loops are a bit confusing//
 
