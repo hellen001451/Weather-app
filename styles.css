@@ -76,6 +76,7 @@ h4{
 }
 .centre.daytime {
     background: url("./images/day-time.jpg");
+    background-size: cover;
 }
 
 .centre.nighttime {
