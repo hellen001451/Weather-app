@@ -9,6 +9,7 @@ const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', '
     
 
 async function checkWeather(city){
+    try{
     const response= await fetch(apiUrl + city + `&appid=${apiKey}`);
 
     if(response.status == 404){
@@ -33,6 +34,7 @@ async function checkWeather(city){
 
        // Set the source for the weather icon image
         document.querySelector(`.day${i+1}-icon`).src = `https://openweathermap.org/img/wn/${weatherIcon}.png`
+        
     }
     let weatherCondition1 = data.list[0].weather[0].description.toLowerCase();
              document.querySelector(".weather-icon").src= `images/${weatherCondition1}.svg`;
@@ -72,12 +74,34 @@ async function checkWeather(city){
         }
     }, 1000);
 
-    searchInput.value = "";
+    searchInput.value = "";  
+}
+catch (error) {
+    console.error("Error fetching weather data:", error);
+    document.querySelector(".error").style.display = "block";
+    document.querySelector(".rest").style.display = "none";
+}
+}
+searchBtn.addEventListener("click", () => {
+    checkWeather(searchInput.value);
+});
+
+searchInput.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+        checkWeather(searchInput.value);
+    }
+});
+
+/*// Function to handle search when the Enter key is pressed or the search button is clicked
+function handleSearch(event) {
+    if (event.key === 'Enter' || event.type === 'click') {
+        checkWeather(searchInput.value);
+    }
 }
 
-searchBtn.addEventListener("click", ()=>{
-     checkWeather(searchInput.value);
-     })
+// Add event listeners for the Enter key and search button
+searchInput.addEventListener('keydown', handleSearch);
+searchBtn.addEventListener('click', handleSearch);*/
 
 window.onload = () => {
      checkWeather("Nairobi");
