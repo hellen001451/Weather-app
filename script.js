@@ -3,6 +3,7 @@ const apiUrl ="https://api.openweathermap.org/data/2.5/forecast?units=metric&q="
 const searchInput = document.querySelector(".search input");
 const searchBtn = document.querySelector(".search button");
 const centreDiv = document.querySelector(".centre");
+const daysDiv = document.querySelector(".days");
         
 const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -49,6 +50,8 @@ async function checkWeather(city){
  document.getElementById("description").innerHTML = data.list[0].weather[0].description;
 
 
+
+
  setInterval(() => {
     const time = new Date();
     const month = time.getMonth();
@@ -68,11 +71,14 @@ async function checkWeather(city){
         if (hour >= 6 && hour < 18) {
             centreDiv.classList.add('daytime');
             centreDiv.classList.remove('nighttime');
+            daysDiv.classList.remove('nighttime')
         } else {
             centreDiv.classList.add('nighttime');
             centreDiv.classList.remove('daytime');
+            daysDiv.classList.add('nighttime')
         }
-    }, 1000);
+        }, 1000)
+
 
     searchInput.value = "";  
 }

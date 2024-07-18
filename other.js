@@ -29,3 +29,31 @@
             document.body.classList.remove('daytime');
         }
     }, 1000);
+
+
+    setInterval(() => {
+        const time = new Date();
+        const month = time.getMonth();
+        const date = time.getDate();
+        const day = time.getDay();
+        const hour = time.getHours();
+        const hoursIn12HrFormat = hour >= 13 ? hour %12: hour
+        const minutes = time.getMinutes();
+        const ampm = hour >=12 ? 'PM' : 'AM'
+    
+         document.getElementById("time").innerHTML = (hoursIn12HrFormat < 10 ? '0' + hoursIn12HrFormat : hoursIn12HrFormat) + ':' + (minutes < 10 ? '0' + minutes : minutes) + ' ' + ampm;
+    
+         document.getElementById("date").innerHTML = days[day] + ', ' + date + ' ' + months[month];
+    
+            // Change background based on time
+            // checks if the current hour (hour) is between 6 AM (hour >= 6) and 6 PM (hour < 18)
+            if (hour >= 6 && hour < 18) {
+                centreDiv.classList.add('daytime');
+                centreDiv.classList.remove('nighttime');
+                daysDiv.classList.remove('nighttime')
+            } else {
+                centreDiv.classList.add('nighttime');
+                centreDiv.classList.remove('daytime');
+                daysDiv.classList.add('nighttime')
+            }
+            }, 1000)
