@@ -36,27 +36,51 @@ h4{
 .degree{
     display: flex;
     flex-direction: column;
-    margin-right: 30px;
+    margin-left:40px;
+    
+   
 }
 .top{
     display: flex;
+   
+}
+.active {
+    color: #ffffff;
+    cursor: default;
+    font-weight: 500;
+  }
+.temperature{
+    display: flex;
+    gap:1rem;
     align-items: center;
-    gap:2rem;
-    justify-content: space-between;
-    
 }
 .temperature h1{
-    font-size: 110px;
+    font-size: 130px;
 }
-.temperature p{
-    font-size: 19px;
+#units{
+    margin-bottom: 10px;
 
 }
+#units a{
+    text-decoration: none;
+   
+}
+.convert-part{
+    font-size:20px;
+   
+}
+
+.temperature a:hover {
+    color: #ffffff;
+    font-weight: 500;
+  }
+li{
+    list-style: none;
+}
 .mobile{
-    margin-left: 200px;
     display: flex;
     flex-direction: column;
-   
+    margin-left: 15rem;
 }
 .mobile img{
     width:170px;
@@ -64,6 +88,8 @@ h4{
 .details{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    margin-left:30px;
 }
 .degree{
     display: flex;
@@ -71,13 +97,13 @@ h4{
     
 }
 
-.degree > h1{
-    font-size: 50px;
+.degree > p{
+    font-size:20px;
     font-weight: 500;
 
 }
 .degree > h2{
-    font-size: 40px;
+    font-size: 50px;
     font-weight: 500;
 
 }
@@ -110,8 +136,7 @@ h4{
 .header{
     display: flex;
     margin-block:30px 80px;
-    justify-content: space-around;
-    
+    justify-content: space-between;
 
 }
 .search input{

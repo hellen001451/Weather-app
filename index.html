@@ -13,7 +13,8 @@
         <div class="header">
             <div class="degree">
                <h2 class="city-name"></h2>
-                <p id="date"> </p> <span><p id="time"> </p></span>
+                <p id="date"> </p>
+                <p id="time"> </p>
             </div>
             <div class="search">
             <input type="text" id="city-name" placeholder="Add city name" spellcheck="false">
@@ -25,10 +26,16 @@
 
        <div class="weather">
             <div class="top">
-                
+
                 <section class="temperature">
                     <h1 class="temp"> </h1>
-                    <p id="description">cloudy</p>
+                    <ul class="convert-part">
+                        <li id="units">
+                          <a href="#" id="celsius-link" class="active">°C</a> |
+                          <a href="#" id="fahrenheit-link">°F</a>
+                        </li>
+                        <li id="description">Partly cloudy</li>
+                      </ul>
                 </section>
 
             <section class="mobile">
